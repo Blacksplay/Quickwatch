@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Filme"
+        android:id="@+id/filme"
+        android:icon="@drawable/baseline_local_movies_24"/>
+    <item android:title="Serien"
+        android:id="@+id/serien"
+        android:icon="@drawable/baseline_serien_tv_24"/>
+</menu>
