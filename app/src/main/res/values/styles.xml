@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Quickwatch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Quickwatch" parent="Base.Theme.Quickwatch" />
+
+    <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Custom Theme Overlay for Toolbar -->
+    <style name="AppTheme.ToolbarOverlay" parent="ThemeOverlay.Material3.Toolbar.Surface">
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+</resources>

@@ -30,8 +30,10 @@ class MyAdapter(private val context: Context, private val items: List<Item>) :
         holder.titleView.text = currentItem.title
         holder.directorView.text = currentItem.director
         holder.imageView.setImageResource(currentItem.image)
-        holder.itemView.setOnClickListener {
-            listener?.onItemClick(currentItem)
+        if (position == 0) { // nur erstes Item soll Klickbar sein
+            holder.itemView.setOnClickListener {
+                listener?.onItemClick(currentItem)
+            }
         }
     }
 

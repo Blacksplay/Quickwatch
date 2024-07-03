@@ -29,7 +29,7 @@
         android:id="@+id/director"
         android:layout_toEndOf="@id/image"
         android:layout_below="@id/titel"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textColor="@color/black"
         tools:text="Titel"/>
 

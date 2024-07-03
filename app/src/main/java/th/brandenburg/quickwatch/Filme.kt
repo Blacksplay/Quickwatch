@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 // TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
@@ -29,27 +28,29 @@ class Filme : Fragment(), MyAdapter.OnItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_filme, container, false)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as? MainActivity)?.backButton?.visibility = View.GONE
 
         val recyclerView: RecyclerView = view.findViewById(R.id.film_recycler_view)
 
+
+        //Filme Einfügen
         val items: MutableList<Item> = ArrayList()
-        items.add(Item("Die Verurteilten", "Frank Darabont", R.drawable.titel_1))
-        items.add(Item("Blues Brothers", "Bekannter Name", R.drawable.titel_1))
-        items.add(Item("Luis Luis", "Ichabod Strauss", R.drawable.titel_1))
-        items.add(Item("Film Nr 4", "Vierfahrt beachten", R.drawable.titel_1))
+        items.add(Item("Die Verurteilten", "directed by Frank Darabont", R.drawable.titel_1))
+        items.add(Item("Green Book", "directed by Peter Farelly", R.drawable.titel_3))
+        items.add(Item("Jojo Rabbit", "directed by Taika Waititi", R.drawable.titel_4))
+        items.add(Item("Three Billboard outside Ebbing, Missouri", "directed by Martin McDonagh", R.drawable.titel_5))
 
-
+        //recyclerview mit Inhalten füllen
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = MyAdapter(requireContext(), items)
         val adapter = MyAdapter(requireContext(), items)
-        adapter.setOnItemClickListener(this)  // Set the click listener on the adapter
+        adapter.setOnItemClickListener(this)
         recyclerView.adapter = adapter
 
     }
@@ -57,8 +58,8 @@ class Filme : Fragment(), MyAdapter.OnItemClickListener {
     override fun onItemClick(item: Item) {
         val filmDetailsFragment = FilmSpez()
         parentFragmentManager.beginTransaction()
-            .replace(R.id.frame_layout, filmDetailsFragment) // Replace with your fragment container ID
-            .addToBackStack(null) // Optional: Add to back stack for navigation
+            .replace(R.id.frame_layout, filmDetailsFragment)
+            .addToBackStack(null)
             .commit()
     }
 }
